@@ -12,7 +12,7 @@ private:
 	SDL_Surface* gScreenSurface = NULL;
 	SDL_Surface* gStretchedSurface = NULL;
 
-	SDL_Rect stretchRect;
+
 
 
 	SDL_Surface* loadSurface(std::string path);

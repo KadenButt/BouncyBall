@@ -58,8 +58,8 @@ SDL_Surface* Display::loadSurface(std::string path)
 
 bool Display::loadMedia(std::string path)
 {
-	gScreenSurface = loadSurface(path.c_str());
-	if (gScreenSurface == NULL)
+	gStretchedSurface = loadSurface(path.c_str());
+	if (gStretchedSurface == NULL)
 	{
 		printf("Unable to load image, SDL Error: %s\n", SDL_GetError());
 		return false;
@@ -69,11 +69,14 @@ bool Display::loadMedia(std::string path)
 
 void Display::output()
 {
+	SDL_Rect stretchRect;
 	stretchRect.x = 0;
 	stretchRect.y = 0;
-	stretchRect.w = screenWidth;
-	stretchRect.h = screenHeight;
+	stretchRect.w = screenHeight;
+	stretchRect.h = screenWidth;
 	SDL_BlitScaled(gStretchedSurface, NULL, gScreenSurface, &stretchRect);
+
+	//update window
 	SDL_UpdateWindowSurface(gWindow);
 }
 

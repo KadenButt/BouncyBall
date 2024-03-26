@@ -31,9 +31,11 @@ int main(int argc, char* args[])
 						quit = true;
 					}
 				}
+
+				display->output();
 			}
 
-			display->output();
+
 		}
 
 	}
