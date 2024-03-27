@@ -65,20 +65,26 @@ bool Display::loadMedia(Img* img)
 		printf("Unable to load image, SDL Error: %s\n", SDL_GetError());
 		return false;
 	}
+	currentImg = img;
 	return true;
 }
 
 void Display::output()
 {
 	SDL_Rect stretchRect;
-	stretchRect.x = 0;
-	stretchRect.y = 0;
-	stretchRect.w = screenHeight * 0.1f;
-	stretchRect.h = screenWidth*0.1f;
+	stretchRect.x = currentImg->getXPosition();
+	stretchRect.y = currentImg->getYPosition();
+	stretchRect.w =	currentImg->getWidth();
+	stretchRect.h = currentImg->getHeight();
 	SDL_BlitScaled(gStretchedSurface, NULL, gScreenSurface, &stretchRect);
 
 	//update window
 	SDL_UpdateWindowSurface(gWindow);
+}
+
+void Display::clearScreen()
+{
+	SDL_FillRect(gScreenSurface, NULL, 0x000000);
 }
 
 void Display::close()

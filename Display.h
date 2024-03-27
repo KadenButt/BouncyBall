@@ -13,11 +13,12 @@ private:
 	SDL_Window* gWindow = NULL;
 	SDL_Surface* gScreenSurface = NULL;
 	SDL_Surface* gStretchedSurface = NULL;
-
-
-
+	
+	Img* currentImg ;
 
 	SDL_Surface* loadSurface(Img* img);
+
+	
 
 
 public:
@@ -25,7 +26,9 @@ public:
 	bool init();
 	bool loadMedia(Img* img);
 	void output();
+	void clearScreen();
 	void close();
+
 
 
 };
