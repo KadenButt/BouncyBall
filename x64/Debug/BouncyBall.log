@@ -1,1 +1,6 @@
-﻿  BouncyBall.vcxproj -> C:\git\BouncyBall\x64\Debug\BouncyBall.exe
+﻿  Display.cpp
+C:\git\BouncyBall\Display.cpp(76,31): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+C:\git\BouncyBall\Display.cpp(77,29): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  main.cpp
+  Generating Code...
+  BouncyBall.vcxproj -> C:\git\BouncyBall\x64\Debug\BouncyBall.exe

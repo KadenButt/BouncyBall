@@ -1,6 +1,8 @@
 #pragma once
 #include <SDL.h>
 #include <string>
+#include "Img.h"
+
 
 class Display
 {
@@ -15,13 +17,13 @@ private:
 
 
 
-	SDL_Surface* loadSurface(std::string path);
+	SDL_Surface* loadSurface(Img* img);
 
 
 public:
 	Display(int w, int h);
 	bool init();
-	bool loadMedia(std::string path);
+	bool loadMedia(Img* img);
 	void output();
 	void close();
 

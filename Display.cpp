@@ -1,6 +1,7 @@
 #include "Display.h"
 #include <SDL.h>
 #include <string>
+#include "Img.h"
 
 Display::Display(int h, int w)
 {
@@ -33,11 +34,11 @@ bool Display::init()
 	return true;
 }
 
-SDL_Surface* Display::loadSurface(std::string path)
+SDL_Surface* Display::loadSurface(Img* img)
 {
 	SDL_Surface* optimized = NULL;
 
-	SDL_Surface* loaded = SDL_LoadBMP(path.c_str());
+	SDL_Surface* loaded = SDL_LoadBMP(img->getPath().c_str());
 	if (loaded == NULL)
 	{
 		printf("Unable to load image, SDL Error: %s\n", SDL_GetError());
@@ -56,9 +57,9 @@ SDL_Surface* Display::loadSurface(std::string path)
 
 }
 
-bool Display::loadMedia(std::string path)
+bool Display::loadMedia(Img* img)
 {
-	gStretchedSurface = loadSurface(path.c_str());
+	gStretchedSurface = loadSurface(img);
 	if (gStretchedSurface == NULL)
 	{
 		printf("Unable to load image, SDL Error: %s\n", SDL_GetError());
@@ -72,8 +73,8 @@ void Display::output()
 	SDL_Rect stretchRect;
 	stretchRect.x = 0;
 	stretchRect.y = 0;
-	stretchRect.w = screenHeight;
-	stretchRect.h = screenWidth;
+	stretchRect.w = screenHeight * 0.1f;
+	stretchRect.h = screenWidth*0.1f;
 	SDL_BlitScaled(gStretchedSurface, NULL, gScreenSurface, &stretchRect);
 
 	//update window
