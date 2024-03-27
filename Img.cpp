@@ -40,6 +40,7 @@ int Img::getWidth()
 	return w;
 }
 
+
 int Img::getXPosition()
 {
 	return x;
