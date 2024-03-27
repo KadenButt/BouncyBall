@@ -30,6 +30,16 @@ void Img::setYPosition(int y)
 	this->y = y;
 }
 
+void Img::setSpeed(int speed)
+{
+	this->speed = speed;
+}
+
+void Img::update()
+{
+	setXPosition(x + speed);
+}
+
 int Img::getHeight()
 {
 	return h;

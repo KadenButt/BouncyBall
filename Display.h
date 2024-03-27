@@ -16,8 +16,6 @@ private:
 	
 	Img* currentImg ;
 
-	int speed;
-
 	SDL_Surface* loadSurface(Img* img);
 
 	

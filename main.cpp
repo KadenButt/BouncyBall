@@ -42,7 +42,8 @@ int main(int argc, char* args[])
 				if (duration.count() > 0.009f)
 				{
 					display->clearScreen();
-					dvd->setXPosition(dvd->getXPosition() + 1);
+					dvd->setSpeed(5);
+					dvd->update();
 					timeSince = std::chrono::high_resolution_clock::now();
 				}
 				

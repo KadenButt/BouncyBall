@@ -10,6 +10,7 @@ private:
 	int w;
 	int x;
 	int y;
+	int speed = 0;
 
 	std::string path;
 
@@ -20,11 +21,14 @@ public:
 	void setWidth(int w);
 	void setXPosition(int x);
 	void setYPosition(int y);
+	void setSpeed(int speed);
+	void update();
 
 	int getHeight();
 	int getWidth();
 	int getXPosition();
 	int getYPosition();
+
 	
 	std::string getPath();
 };

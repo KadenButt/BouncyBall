@@ -2,7 +2,7 @@
 <Project>
   <ProjectOutputs>
     <ProjectOutput>
-      <FullPath>C:\Git\BouncyBall\x64\Debug\BouncyBall.exe</FullPath>
+      <FullPath>C:\git\BouncyBall\x64\Debug\BouncyBall.exe</FullPath>
     </ProjectOutput>
   </ProjectOutputs>
   <ContentFiles />
