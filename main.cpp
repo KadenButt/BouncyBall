@@ -4,17 +4,20 @@
 
 #include "Display.h"
 #include "Img.h"
+#include "Sprite.h"
 
 
 int main(int argc, char* args[])
 {
 	Display* display = new Display(600, 600);
-	Img* dvd = new Img(100, 100, 0, 0, "images/dvd.bmp");
+
+	Sprite* dvd = new Sprite(100, 100, 0, 0, "images/dvd.bmp");
+	dvd->setSpeed(Vector(1, 1));
+
+	dvd->setBoundaries(Vector(0, 0), Vector(600, 600));
+
 	auto timeSince = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<float> duration;
-
-
-
 
 	if (!display->init())
 	{
@@ -42,7 +45,7 @@ int main(int argc, char* args[])
 				if (duration.count() > 0.009f)
 				{
 					display->clearScreen();
-					dvd->setSpeed(5);
+					
 					dvd->update();
 					timeSince = std::chrono::high_resolution_clock::now();
 				}

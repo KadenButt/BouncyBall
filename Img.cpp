@@ -1,12 +1,13 @@
 #include "Img.h"
 #include <string>
+#include "Vector.h"
 
 Img::Img(int h, int w, int x, int y, std::string p)
 {
 	this->h = h;
 	this->w = w;
-	this->x = x;
-	this->y = y;
+	position.x = x;
+	position.y = y;
 	this->path = p;
 }
 
@@ -20,24 +21,9 @@ void Img::setWidth(int w)
 	this->w = w;
 }
 
-void Img::setXPosition(int x)
+void Img::setPosition(Vector v)
 {
-	this->x = x;
-}
-
-void Img::setYPosition(int y)
-{
-	this->y = y;
-}
-
-void Img::setSpeed(int speed)
-{
-	this->speed = speed;
-}
-
-void Img::update()
-{
-	setXPosition(x + speed);
+	position = v;
 }
 
 int Img::getHeight()
@@ -50,15 +36,9 @@ int Img::getWidth()
 	return w;
 }
 
-
-int Img::getXPosition()
+Vector Img::getPosition()
 {
-	return x;
-}
-
-int Img::getYPosition()
-{
-	return y;
+	return position;
 }
 
 std::string Img::getPath()

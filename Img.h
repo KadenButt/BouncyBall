@@ -2,16 +2,15 @@
 
 
 #include <string>
-
+#include "Vector.h"
 class Img
 {
 private:
 	int h;
 	int w;
-	int x;
-	int y;
-	int speed = 0;
-
+	//int x;
+	//int y;
+	Vector position;
 	std::string path;
 
 public:
@@ -19,15 +18,12 @@ public:
 
 	void setHeight(int h);
 	void setWidth(int w);
-	void setXPosition(int x);
-	void setYPosition(int y);
-	void setSpeed(int speed);
-	void update();
+	void setPosition(Vector v);
+
 
 	int getHeight();
 	int getWidth();
-	int getXPosition();
-	int getYPosition();
+	Vector getPosition();
 
 	
 	std::string getPath();

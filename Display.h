@@ -14,7 +14,7 @@ private:
 	SDL_Surface* gScreenSurface = NULL;
 	SDL_Surface* gStretchedSurface = NULL;
 	
-	Img* currentImg ;
+	Img* currentImg = NULL ;
 
 	SDL_Surface* loadSurface(Img* img);
 

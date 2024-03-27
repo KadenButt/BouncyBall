@@ -72,8 +72,8 @@ bool Display::loadMedia(Img* img)
 void Display::output()
 {
 	SDL_Rect stretchRect;
-	stretchRect.x = currentImg->getXPosition();
-	stretchRect.y = currentImg->getYPosition();
+	stretchRect.x = currentImg->getPosition().x;
+	stretchRect.y = currentImg->getPosition().y;
 	stretchRect.w =	currentImg->getWidth();
 	stretchRect.h = currentImg->getHeight();
 	SDL_BlitScaled(gStretchedSurface, NULL, gScreenSurface, &stretchRect);
