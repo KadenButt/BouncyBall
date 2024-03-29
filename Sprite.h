@@ -22,6 +22,8 @@ private:
 public:
 	Sprite(int h, int w, int x, int y, std::string p);
 	void setSpeed(Vector v);
+	//changes x speed to y speed, vice versa
+	void invertSpeed();
 	void update();
 	void setBoundaries(Vector tlb, Vector brb);
 

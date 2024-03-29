@@ -9,12 +9,12 @@
 
 int main(int argc, char* args[])
 {
-	Display* display = new Display(600, 600);
+	Display* display = new Display(1920, 1080);
 
 	Sprite* dvd = new Sprite(100, 100, 0, 0, "images/dvd.bmp");
-	dvd->setSpeed(Vector(1, 1));
+	dvd->setSpeed(Vector(2, 1));
 
-	dvd->setBoundaries(Vector(0, 0), Vector(600, 600));
+	dvd->setBoundaries(Vector(0, 0), Vector(1920, 1080));
 
 	auto timeSince = std::chrono::high_resolution_clock::now();
 	std::chrono::duration<float> duration;
@@ -42,7 +42,7 @@ int main(int argc, char* args[])
 				}
 
 				duration = std::chrono::high_resolution_clock::now() - timeSince;
-				if (duration.count() > 0.009f)
+				if (duration.count() > 0.01f)
 				{
 					display->clearScreen();
 					
